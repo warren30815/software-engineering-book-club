@@ -5,7 +5,7 @@ Chinese Translation: [內行人才知道的系統設計面試指南](https://www
 
 | Chapter                                                        | Speaker            | Date  | Completed          | Link of Notes                  |
 |----------------------------------------------------------------|--------------------|-------|--------------------|--------------------------------|
-| CHAPTER 1: SCALE FROM ZERO TO MILLIONS OF USERS                | Jay / Fienna Liang | 06/09 | :heavy_check_mark: | [Chapter 1](notes/chater_1.md) |
+| CHAPTER 1: SCALE FROM ZERO TO MILLIONS OF USERS                | Jay / Fienna Liang | 06/09 | :heavy_check_mark: | [Chapter 1](notes/chapter_1.md) |
 | CHAPTER 2: BACK-OF-THE-ENVELOPE ESTIMATION                     |                    |       | :heavy_check_mark: |                                |
 | CHAPTER 3: A FRAMEWORK FOR SYSTEM DESIGN INTERVIEWS            |                    |       | :heavy_check_mark: |                                |
 | CHAPTER 4: DESIGN A RATE LIMITER                               |                    |       | :heavy_check_mark: |                                |
