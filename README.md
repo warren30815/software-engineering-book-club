@@ -11,8 +11,8 @@ Chinese Translation: [內行人才知道的系統設計面試指南](https://www
 | CHAPTER 4: DESIGN A RATE LIMITER                               |                    |       | :heavy_check_mark: |                                |
 | CHAPTER 5: DESIGN CONSISTENT HASHING                           |                    |       | :heavy_check_mark: |                                |
 | CHAPTER 6: DESIGN A KEY-VALUE STORE                            |                    |       | :heavy_check_mark: |                                |
-| CHAPTER 7: DESIGN A UNIQUE ID GENERATOR IN DISTRIBUTED SYSTEMS |                    |       | :heavy_check_mark: |                                |
-| CHAPTER 8: DESIGN A URL SHORTENER                              |                    |       | :heavy_check_mark: |                                |
+| CHAPTER 7: DESIGN A UNIQUE ID GENERATOR IN DISTRIBUTED SYSTEMS | Jordan             |       | :heavy_check_mark: |                                |
+| CHAPTER 8: DESIGN A URL SHORTENER                              | Jordan             |       | :heavy_check_mark: |                                |
 | CHAPTER 9: DESIGN A WEB CRAWLER                                |                    |       | :heavy_check_mark: |                                |
 | CHAPTER 10: DESIGN A NOTIFICATION SYSTEM                       |                    |       | :heavy_check_mark: |                                |
 | CHAPTER 11: DESIGN A NEWS FEED SYSTEM                          |                    |       | :heavy_check_mark: |                                |
