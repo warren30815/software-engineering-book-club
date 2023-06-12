@@ -5,14 +5,14 @@ Chinese Translation: [內行人才知道的系統設計面試指南](https://www
 
 | Chapter                                                        | Speaker            | Date  | Completed          | Link of Notes                  |
 |----------------------------------------------------------------|--------------------|-------|--------------------|--------------------------------|
-| CHAPTER 1: SCALE FROM ZERO TO MILLIONS OF USERS                | Jay / Fienna Liang | 06/09 | :heavy_check_mark: | [Chapter 1](notes/chapter_1.md) |
+| CHAPTER 1: SCALE FROM ZERO TO MILLIONS OF USERS                | Jay / Fienna Liang | 06/09 | :white_check_mark: | [Chapter 1](notes/chapter_1.md) |
 | CHAPTER 2: BACK-OF-THE-ENVELOPE ESTIMATION                     |                    |       | :heavy_check_mark: |                                |
 | CHAPTER 3: A FRAMEWORK FOR SYSTEM DESIGN INTERVIEWS            |                    |       | :heavy_check_mark: |                                |
 | CHAPTER 4: DESIGN A RATE LIMITER                               |                    |       | :heavy_check_mark: |                                |
 | CHAPTER 5: DESIGN CONSISTENT HASHING                           |                    |       | :heavy_check_mark: |                                |
 | CHAPTER 6: DESIGN A KEY-VALUE STORE                            |                    |       | :heavy_check_mark: |                                |
-| CHAPTER 7: DESIGN A UNIQUE ID GENERATOR IN DISTRIBUTED SYSTEMS | Jordan             |       | :heavy_check_mark: |                                |
-| CHAPTER 8: DESIGN A URL SHORTENER                              | Jordan             |       | :heavy_check_mark: |                                |
+| CHAPTER 7: DESIGN A UNIQUE ID GENERATOR IN DISTRIBUTED SYSTEMS | Jordan             | 06/23 | :heavy_check_mark: |                                |
+| CHAPTER 8: DESIGN A URL SHORTENER                              | Jordan             | 06/23 | :heavy_check_mark: |                                |
 | CHAPTER 9: DESIGN A WEB CRAWLER                                |                    |       | :heavy_check_mark: |                                |
 | CHAPTER 10: DESIGN A NOTIFICATION SYSTEM                       |                    |       | :heavy_check_mark: |                                |
 | CHAPTER 11: DESIGN A NEWS FEED SYSTEM                          |                    |       | :heavy_check_mark: |                                |
