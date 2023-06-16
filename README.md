@@ -9,7 +9,7 @@ Chinese Translation: [內行人才知道的系統設計面試指南](https://www
 | CHAPTER 1: SCALE FROM ZERO TO MILLIONS OF USERS                | Jay / Fienna Liang | 06/09 | :white_check_mark: | [Chapter 1](notes/chapter_1.md) |
 | CHAPTER 2: BACK-OF-THE-ENVELOPE ESTIMATION                     |                    |       | :heavy_check_mark: |                                 |
 | CHAPTER 3: A FRAMEWORK FOR SYSTEM DESIGN INTERVIEWS            |                    |       | :heavy_check_mark: |                                 |
-| CHAPTER 4: DESIGN A RATE LIMITER                               | 杯                 | 06/16 | :heavy_check_mark: | [Chapter 4](notes/chapter_4.md) |
+| CHAPTER 4: DESIGN A RATE LIMITER                               | 雷 N / 杯          | 06/16 | :heavy_check_mark: | [Chapter 4](notes/chapter_4.md) |
 | CHAPTER 5: DESIGN CONSISTENT HASHING                           |                    |       | :heavy_check_mark: |                                 |
 | CHAPTER 6: DESIGN A KEY-VALUE STORE                            |                    |       | :heavy_check_mark: |                                 |
 | CHAPTER 7: DESIGN A UNIQUE ID GENERATOR IN DISTRIBUTED SYSTEMS | Jordan             | 06/23 | :heavy_check_mark: |                                 |
