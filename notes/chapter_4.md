@@ -6,9 +6,9 @@
 
 - 作用：
 
-  - 防止 DoS
-  - 節省流量成本
-  - 防止超載
+  - 防止 DoS: 避免資源餓死 (resouce starvation)
+  - 節省流量成本: 流程內可能會調用到第三方服務 (依次計費), 或者 LB 依請求次數計費, 如果能在避免資源餓死的前提下作考量時, 那麼大部分的請求被拒絕時, 自然而然以上的成本會下降
+  - 防止超載: 會打請求的未必只是人還有Bot, 為了避免大家把有限資源的服務器打暴為前提做設計 (更多能參考SLA)
 
 - 目標：
 
@@ -17,16 +17,18 @@
     - REF: client: axios-rate-limit: other will be delayed automatically.
 
   - a large number of requests --> Low latency & little memory？
+ 
+  - 聚合用的欄位, 希望足夠彈性
 
-  - Exception handling, inform users
+  - exception handling, inform users
 
-  - service (API Gateway) VS server-side code
+  - service (API Gateway) vs server-side code
 
-  - Distributed
+  - work in distributed environment, 在這裡指的是 Rate limiter 本身可能不只是 cluster, 甚至跨 VPC, 跨 AZ 的環境
 
-  - High fault tolerance
-
-- service (API Gateway) VS server-side code
+  - high fault tolerance: Rate limiter 本身非業務流程上的必要功能, 它本身的好壞不該影響到整個系統, 因此考量時, 該怎設計隔離 rate limte service 某個節點異常的部份
+ 
+  - low latency: rate limit本身非業務所需功能, 不應該在latency上佔比過高
 
   - technology stack
 
@@ -47,6 +49,17 @@
   - Sliding window log
 
     - 可在每次收到請求時，才清除舊資料。安排固定時間或長度清除
+    
+    Q: 為什麼連被拒絕的請求也要加入 log 做計數？
+    
+    A: 這個的設計其實不是為了直接給 rate limiter 來計算用的，而是其他需求，畢竟叫做 log，像 nginx access log 一樣，有請求來的本來就都會被紀錄，有以下四個常見需求：
+    
+       1. 故障排查用: 被拒絕的請求可能表示系統中存在問題。例如，如果出現許多請求被拒絕，可能意味著系統超負荷、有 bug、或者資源分配不足。透過記錄被拒絕的請求，工程師能夠回溯問題並進行修復。
+       2. 監控系統負載: 大量的被拒絕的請求可能表示系統負載過高或者資源短缺。這些日誌可以作為我們監控系統狀態和評估資源需求的依據。
+       3. 離線用戶行為分析: 對於被拒絕的請求進行記錄和分析，可以幫助我們更好地了解用戶的行為模式，以及那些功能或服務可能存在問題。然後我們就可以對這些問題進行調整和優化。
+       4. 法規和合規需求: 在某些情況下，法規可能要求我們記錄所有的請求，包括被拒絕的請求。
+    
+    ref: [Rate limiting - why log rejected requests' timestamps in Sliding window log algorithm?](https://www.reddit.com/r/AskComputerScience/comments/xktn2j/rate_limiting_why_log_rejected_requests/)
 
   - Sliding window counter
 
@@ -86,22 +99,15 @@
       - 解決 D 的記憶體使用問題，但保有大概率解決 C 的問題，不會超過流量
       - 實驗統計只有 0.003% 出錯
 
-- 疑問
-
-  - Sliding window log
-
-    - 為什麼連被拒絕的請求也要加入 log 做計數？
-    - REF: [網路上有人提出相同疑惑](https://www.reddit.com/r/AskComputerScience/comments/xktn2j/rate_limiting_why_log_rejected_requests/)
-
 ## # High-level architecture
 
 ## # Design deep dive
 
-- Rate limiting rules
+- Rate limiting rules 怎被建立、儲存、存取和更新: 依照結構化格式(YAML, JSON, XML...)，將規則的欄位給格式化
 
 - Exceeding the rate limit
 
-  - HTTP 429
+  - HTTP 429 (Too many requests)
 
     - 放到待處理
     - 直接捨棄
@@ -110,23 +116,29 @@
 
     - 沒超過限制
 
-      - X-Ratelimit-Remaining
-      - X-Ratelimit-Limit
-      - X-Rate-Limit-Reset
+      - X-Ratelimit-Remaining: 在時間區間內還剩下多少配額
+      - X-Ratelimit-Limit: 在時間區間內，客戶端請求的限額
+      - X-Rate-Limit-Reset: 一個代表時間的數值，時間到將重設配額
 
-    - 超過限制回 429
+    - 超過限制回傳 429
 
-      - X-Ratelimit-Retry-After
+      - X-Ratelimit-Retry-After: 指定客戶端在傳送下一個要求之前所應等待 (或睡眠) 的秒數。如果重試值沒過就傳送要求，則不會處理要求，並且會回傳新的重試值。
+     
+      **Client需要知道這些資訊，才好控制下一次發出請求 (甚至也能說是一種Retry policy的控制)**
 
 - Detailed design
 
-- Rate limiter in a distributed environment
+  Q: 這些資訊適合存放在哪？
+  
+  A: RDBMS太慢且本身的資料結構也不適合存放大量數據，且有熱點存取問題，因此選擇 in memory store 是適合的，夠快且過期的資料通常 in-memory db 有配合的機制能汰除掉，因為我們這裡大部分都只要計次 (sliding window log 例外)，Redis有提供INCR與EXPIRE (甚至TTL機制)，便於使用
 
-  - Race condition
+- Rate limiter in a distributed environments
+
+  - Race condition (類似超賣問題)
 
     - Locks
 
-      - 會降低效能
+      - 會降低效能，吞吐量會受影響
 
     - Lua script
 
@@ -138,6 +150,8 @@
       - [Skip List](https://mecha-mind.medium.com/redis-sorted-sets-and-skip-lists-4f849d188a33)
 
   - Synchronization issue
+ 
+    在跨 VPC / AZ 的情況下，很可能 rate limiter 內的資訊與狀態不一致，對同一個user，不同請求會隨機跳轉到不同 rate limiter 上被處理，那就等於白搭了，所以在這裡會建議用同一個 redis cluster，以及啟用 sticky session機制，讓同一個 user 的不同請求都能在同一個 rate limiter 上被處理
 
     - sticky sessions
 
@@ -202,5 +216,3 @@
   - 其他
 
 - Circuit breaking（熔斷）和 degradation（降級）
-
-- 其他
