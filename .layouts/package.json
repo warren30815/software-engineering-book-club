@@ -3,6 +3,7 @@
   "name": "wiki",
   "version": "1.0.0",
   "license": "MIT",
+  "homepage": "https://github.com/warren30815/system-design-interview-book-club",
   "scripts": {
     "develop": "gatsby develop -H 0.0.0.0",
     "start": "gatsby develop -H 0.0.0.0",
