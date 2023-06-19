@@ -1,5 +1,7 @@
 # system-design-interview-book-club
 
+筆記網站: https://warren30815.github.io/system-design-interview-book-club
+
 English Book: [System Design Interview – An insider's guide: Xu, Alex (Volume 1)](<https://github.com/G33kzD3n/Catalogue/blob/master/System%20Design%20Interview%20An%20Insider%E2%80%99s%20Guide%20by%20Alex%20Xu%20(z-lib.org).pdf>) ✅
 
 Chinese Translation: [內行人才知道的系統設計面試指南](https://www.books.com.tw/products/0010903454) ✅
@@ -25,4 +27,4 @@ Chinese Translation: [內行人才知道的系統設計面試指南](https://www
 
 > Note: Use [Markdown table generator](https://www.tablesgenerator.com/markdown_tables) to load, modify and format the table
 
-<img width="371" alt="截圖 2023-06-05 上午10 22 08" src="https://github.com/warren30815/system-design-interview-book-club/assets/36834814/c634e1e9-f1e3-46af-95b6-1ae14bc3887a">
+<img width="371" alt="截圖 2023-06-05 上午10 22 08" src="https://github.com/warren30815/system-design-interview-book-club/assets/36834814/c634e1e9-f1e3-46af-95b6-1ae14bc3887a" />
