@@ -4,7 +4,7 @@ const siteMetadata = {
   title: "讀書會",
   shortName: "讀書會",
   description: "就是讀書會",
-  siteUrl: "https://warren30815.github.io/system-design-interview-book-club",
+  siteUrl: "https://warren30815.github.io/",
 };
 module.exports = {
   siteMetadata,
