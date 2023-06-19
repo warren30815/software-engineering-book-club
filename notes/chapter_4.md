@@ -159,7 +159,6 @@
 
     - centralized data stores
 
-      - 需要跨機器，依然使用 Redis 的用意？
       - REF: [A Comprehensive Guide to Distributed Caching](https://blog.devgenius.io/a-comprehensive-guide-to-distributed-caching-827f1fa5a184)
 
 - Performance optimization
