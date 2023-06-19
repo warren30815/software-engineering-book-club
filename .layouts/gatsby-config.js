@@ -1,5 +1,5 @@
 const path = require("path");
-const pathPrefix = "/system-design-interview-book-club/";
+const pathPrefix = "/";
 const siteMetadata = {
   title: "讀書會",
   shortName: "讀書會",
