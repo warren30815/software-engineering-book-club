@@ -36,7 +36,7 @@ jobs:
         working-directory: .layouts
 
       - name: Build Site
-        run: npm run build
+        run: PREFIX_PATHS=true npm run build
         working-directory: .layouts
 
       - name: Deploy
