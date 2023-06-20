@@ -4,7 +4,7 @@ const siteMetadata = {
   title: "讀書會",
   shortName: "讀書會",
   description: "就是讀書會",
-  siteUrl: "https://warren30815.github.io",
+  siteUrl: "https://warren30815.github.io/",
 };
 module.exports = {
   siteMetadata,
@@ -27,7 +27,7 @@ module.exports = {
         nav: [
           {
             title: "Github",
-            url: "https://github.com/warren30815/system-design-interview-book-club",
+            url: "https://github.com/warren30815/system-design-interview-book-club/",
           },
         ],
         editUrl:
