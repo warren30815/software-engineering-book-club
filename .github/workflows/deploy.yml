@@ -6,20 +6,17 @@ on:
       - main
 
 jobs:
-  contrib-readme-job:
+  build:
     runs-on: ubuntu-latest
-    name: A job to automate contrib in readme
     steps:
       - name: Contribute List
         uses: akhilmhdh/contributors-readme-action@v2.3.6
         with:
           image_size: 200
+          use_username: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  build:
-    runs-on: ubuntu-latest
-    steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
