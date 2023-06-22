@@ -37,7 +37,7 @@ A: 每秒需要能產生 10,000 IDs
 
 ### Multi-master replication
 
-![](multi_master.png)
+![](assets/multi_master.png)
 
 如圖，還是利用資料庫的 _auto_increment_ 功能，只是不是 + 1，而是比如有 k 個資料庫就 + k，圖中 k = 2
 
@@ -55,7 +55,7 @@ UUID 是一個能產生 128-bit ID 的演算法，有著極小的碰撞概率，
 
 因為有著極低的碰撞概率，因此可以每個伺服器都跑自己的 UUID 生成器，如下圖：
 
-![](uuid.png)
+![](assets/uuid.png)
 
 優點：
 
@@ -70,7 +70,7 @@ UUID 是一個能產生 128-bit ID 的演算法，有著極小的碰撞概率，
 
 ### Ticket Server
 
-![](ticket_server.png)
+![](assets/ticket_server.png)
 
 如圖，ID 的發放統一由ㄧ伺服器負責
 
@@ -85,7 +85,7 @@ UUID 是一個能產生 128-bit ID 的演算法，有著極小的碰撞概率，
 
 ### Twitter snowflake approach
 
-![](snowflake.png)
+![](assets/snowflake.png)
 
 將 64-bit 分成幾個區塊，有點像是網路封包 header 的做法
 
@@ -107,7 +107,7 @@ UUID 是一個能產生 128-bit ID 的演算法，有著極小的碰撞概率，
 
 • 時間戳記：上述有提到到 2039 年 41 bits 會不夠用，因此 twitter 實務上此欄位的時間是為距公司創立時經過的相對時間，如下圖：
 
-![](twitter_time.png)
+![](assets/twitter_time.png)
 
 • 資料中心 ID：基本上不會用到這麼多資料中心，因此可減少 bit 數給其他人用，或者只有單一個資料中心的情況下，可替換為 table 的編號
 
