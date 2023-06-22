@@ -17,18 +17,10 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "content",
-        path: `${__dirname}/../content`,
+        path: `${__dirname}/..`,
         ignore: [`**/\.*/**/*`],
       },
     },
-    {
-        resolve: "gatsby-source-filesystem",
-        options: {
-          name: "system-design-content",
-          path: `${__dirname}/../content/system-design`,
-          ignore: [`**/\.*/**/*`],
-        },
-      },
     {
       resolve: "gatsby-theme-primer-wiki",
       options: {
