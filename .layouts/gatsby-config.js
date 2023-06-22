@@ -1,5 +1,5 @@
 const path = require("path");
-const pathPrefix = "/system-design-interview-book-club/";
+const pathPrefix = "/software-engineering-book-club/";
 const siteMetadata = {
   title: "讀書會",
   shortName: "讀書會",
@@ -27,11 +27,11 @@ module.exports = {
         nav: [
           {
             title: "Github",
-            url: "https://github.com/warren30815/system-design-interview-book-club/",
+            url: "https://github.com/warren30815/software-engineering-book-club/",
           },
         ],
         editUrl:
-          "https://github.com/warren30815/system-design-interview-book-club/tree/main/",
+          "https://github.com/warren30815/software-engineering-book-club/tree/main/",
       },
     },
     {
