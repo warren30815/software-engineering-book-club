@@ -6,6 +6,10 @@
 
 ## 步驟一：需求範圍確認
 
+Q: 可以舉個例子說明此短網址服務的運作嗎
+
+A: 假設 https://www.systeminterview.com/q=chatsystem&c=loggedin&v=v3&l=long 為原始網址，此服務會創建一縮短版本（alias），如 https://tinyurl.com/y7keocwj ，如點擊此 alias，會將你重導向至原始網址
+
 Q: 服務要支援多大流量規模
 
 A: 每天 100 million 個網址
@@ -57,7 +61,7 @@ POST api/v1/data/shorten
 - return shortURL
 </code>
 
-假設縮短後的網址格式如：www.tinyurl.com/{hashValue}，我們需設計一 hash 函數來將長網址對應成短網址，需符合兩條件
+假設縮短後的網址格式如："www.tinyurl.com/{hashValue}"，我們需設計一 hash 函數來將長網址對應成短網址，需符合兩條件
 
 - 每一長網址對應唯一的短網址字串（即上面的 hashValue）
 - 每一 hashValue 可對應回去長網址
