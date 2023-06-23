@@ -54,12 +54,12 @@ A: 可假設不會被刪除或更新
 
 REST API 範例如：
 
-<code>
+```
 POST api/v1/data/shorten
 
 - request parameter: {longUrl: longURLString}
 - return shortURL
-</code>
+```
 
 假設縮短後的網址格式如：
 ```
@@ -75,11 +75,11 @@ www.tinyurl.com/{hashValue}
 
 REST API 範例如：
 
-<code>
+```
 GET api/v1/shortUrl
 
 - Return longURL for HTTP redirection
-</code>
+```
 
 重導向流程可見下圖
 
