@@ -12,12 +12,12 @@ Chinese Translation: [內行人才知道的系統設計面試指南](https://www
 | CHAPTER 6: DESIGN A KEY-VALUE STORE                            | 雷 N               | 07/07 | ✔️         |
 | CHAPTER 7: DESIGN A UNIQUE ID GENERATOR IN DISTRIBUTED SYSTEMS | Jordan             | 06/23 | ✔️         |
 | CHAPTER 8: DESIGN A URL SHORTENER                              | Jordan             | 06/23 | ✔️         |
-| CHAPTER 9: DESIGN A WEB CRAWLER                                |                    |       | ✔️         |
+| CHAPTER 9: DESIGN A WEB CRAWLER                                | Jordan             | 06/30 | ✔️         |
 | CHAPTER 10: DESIGN A NOTIFICATION SYSTEM                       | 雷 N               | ??/?? | ✔️         |
 | CHAPTER 11: DESIGN A NEWS FEED SYSTEM                          |                    |       | ✔️         |
 | CHAPTER 12: DESIGN A CHAT SYSTEM                               |                    |       | ✔️         |
 | CHAPTER 13: DESIGN A SEARCH AUTOCOMPLETE SYSTEM                |                    |       | ✔️         |
-| CHAPTER 14: DESIGN YOUTUBE                                     |                    |       | ✔️         |
+| CHAPTER 14: DESIGN YOUTUBE                                     | Jordan             | ??/?? | ✔️         |
 | CHAPTER 15: DESIGN GOOGLE DRIVE                                |                    |       | ✔️         |
 | CHAPTER 16: THE LEARNING CONTINUES                             |                    |       | ✔️         |
 
