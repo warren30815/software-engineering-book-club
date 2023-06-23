@@ -8,7 +8,7 @@
 
 Q: 可以舉個例子說明此短網址服務的運作嗎
 
-A: 假設 https://www.systeminterview.com/q=chatsystem&c=loggedin&v=v3&l=long 為原始網址，此服務會創建一縮短版本（alias），如 https://tinyurl.com/y7keocwj ，如點擊此 alias，會將你重導向至原始網址
+A: 假設 <https://www.systeminterview.com/q=chatsystem&c=loggedin&v=v3&l=long> 為原始網址，此服務會創建一縮短版本（alias），如 <https://tinyurl.com/y7keocwj> ，如點擊此 alias，會將你重導向至原始網址
 
 Q: 服務要支援多大流量規模
 
