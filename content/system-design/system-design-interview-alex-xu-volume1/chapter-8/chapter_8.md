@@ -61,7 +61,12 @@ POST api/v1/data/shorten
 - return shortURL
 </code>
 
-假設縮短後的網址格式如："www.tinyurl.com/{hashValue}"，我們需設計一 hash 函數來將長網址對應成短網址，需符合兩條件
+假設縮短後的網址格式如：
+```
+www.tinyurl.com/{hashValue}
+```
+
+我們需設計一 hash 函數來將長網址對應成短網址，需符合兩條件
 
 - 每一長網址對應唯一的短網址字串（即上面的 hashValue）
 - 每一 hashValue 可對應回去長網址
