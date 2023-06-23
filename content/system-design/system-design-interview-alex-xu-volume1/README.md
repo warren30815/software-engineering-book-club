@@ -10,9 +10,9 @@ Chinese Translation: [內行人才知道的系統設計面試指南](https://www
 | CHAPTER 4: DESIGN A RATE LIMITER                               | 杯 / 雷 N          | 06/16 | ✅        |
 | CHAPTER 5: DESIGN CONSISTENT HASHING                           | 雷 N               | 06/30 | ✔️         |
 | CHAPTER 6: DESIGN A KEY-VALUE STORE                            | 雷 N               | 07/07 | ✔️         |
-| CHAPTER 7: DESIGN A UNIQUE ID GENERATOR IN DISTRIBUTED SYSTEMS | Jordan             | 06/23 | ✔️         |
-| CHAPTER 8: DESIGN A URL SHORTENER                              | Jordan             | 06/23 | ✔️         |
-| CHAPTER 9: DESIGN A WEB CRAWLER                                | Jordan             | 06/30 | ✔️         |
+| CHAPTER 7: DESIGN A UNIQUE ID GENERATOR IN DISTRIBUTED SYSTEMS | Jordan             | 06/30 | ✔️         |
+| CHAPTER 8: DESIGN A URL SHORTENER                              | Jordan             | 06/30 | ✔️         |
+| CHAPTER 9: DESIGN A WEB CRAWLER                                | Jordan             | 07/07 | ✔️         |
 | CHAPTER 10: DESIGN A NOTIFICATION SYSTEM                       | 雷 N               | ??/?? | ✔️         |
 | CHAPTER 11: DESIGN A NEWS FEED SYSTEM                          |                    |       | ✔️         |
 | CHAPTER 12: DESIGN A CHAT SYSTEM                               |                    |       | ✔️         |
