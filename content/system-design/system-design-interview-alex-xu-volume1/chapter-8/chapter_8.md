@@ -108,7 +108,45 @@ GET api/v1/shortUrl
 
 ![](assets/hash_with_collision.png)
 
-用知名的 hash 演算法，如 CRC32、MD5、SHA-1...，缺點為 hash 出來的字串太長，以及還需要向資料庫確認是否有碰撞，會降低效能，一個提高檢查效率的改進方式為 bloom filter，雖有可能產生 false positive，但在此應用情境下可容忍
+用知名的 hash 演算法，如 CRC32、MD5、SHA-1...，缺點為 hash 出來的字串太長，以及還需要向資料庫確認是否有碰撞，會降低效能，一個提高檢查效率的改進方式為應用 Bloom filter（見下方備註），雖有可能產生 false positive，但在此應用情境下可容忍
+
+註：
+
+(from wiki) Bloom filter is a space-efficient probabilistic data structure, that is used to test whether an element is a member of a set.
+
+Bloom filter 說沒有該資料的話**一定**沒有，說有該資料的話**不一定**有（definitely no and probably yes）
+
+適用情境
+
+![](assets/bf.png)
+
+使用案例
+
+1. Database
+
+![](assets/bf_case1.png)
+
+2. CDN
+
+Akamai cdn 上有 75% 的網址只被訪問過一次，這種冷門的網址不需收錄進去 cdn database 節省空間
+
+![](assets/bf_case2.png)
+
+3. 惡意網址檢測
+
+![](assets/bf_case3.png)
+
+4. 弱密碼檢測
+
+![](assets/bf_case4.png)
+
+簡易範例
+
+![](assets/bf_example.png)
+
+將 input 經過多個 hash 函數後，如在對應的位置都為 1，則 probably yes，如有一個位置為 0，則 definitely no
+
+[Ref](https://www.youtube.com/watch?v=V3pzxngeLqw)
 
 #### Base 62 conversion
 
