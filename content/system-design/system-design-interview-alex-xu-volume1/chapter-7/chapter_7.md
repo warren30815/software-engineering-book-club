@@ -125,4 +125,11 @@ UUID 是一個能產生 128-bit ID 的演算法，有著極小的碰撞概率，
 
 - High availability：ID 生成器很重要，設計上需考慮好如何保證高 availability
 
-(Jordan 個人看法)：看下來覺得最方便的還是直接用 UUID 生成演算法，雖然會增加儲存空間用量（因為 128-bit）以及不好用時間排序，但 snowflake 的方法也需要一開始考慮好切割的格式，如果之後要改格式要 migrate 也是一件麻煩事
+## 補充資料
+[xid](https://github.com/rs/xid)
+
+![](assets/xid.png)
+
+![](assets/xid_note.png)
+
+![](assets/benchmark.png)
