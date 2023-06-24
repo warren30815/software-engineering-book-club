@@ -101,16 +101,16 @@ GET api/v1/shortUrl
 
 兩種設計 hash 函數的方法：
 
-1. well-known hash functions + 碰撞處理
+1. 使用知名的 hash functions + 碰撞處理
 2. Base 62 conversion
 
-#### well-known hash functions + 碰撞處理
+#### 知名 hash functions + 碰撞處理
 
 ![](assets/hash_with_collision.png)
 
 用知名的 hash 演算法，如 CRC32、MD5、SHA-1...，缺點為 hash 出來的字串太長，以及還需要向資料庫確認是否有碰撞，會降低效能，一個提高檢查效率的改進方式為應用 Bloom filter（見下方備註），雖有可能產生 false positive，但在此應用情境下可容忍
 
-註：
+註：Bloom filter介紹
 
 (from wiki) Bloom filter is a space-efficient probabilistic data structure, that is used to test whether an element is a member of a set.
 
@@ -128,7 +128,7 @@ Bloom filter 說沒有該資料的話**一定**沒有，說有該資料的話**�
 
 2. CDN
 
-Akamai cdn 上有 75% 的網址只被訪問過一次，這種冷門的網址不需收錄進去 cdn database 節省空間
+Akamai cdn 上有 75% 的網址只被訪問過一次，這種冷門的網址不需收錄進去 cdn 節省空間，也因此降低快取的負擔、提高 cache hit 機率
 
 ![](assets/bf_case2.png)
 
