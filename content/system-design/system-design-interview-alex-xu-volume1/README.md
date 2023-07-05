@@ -5,21 +5,21 @@ Chinese Translation: [內行人才知道的系統設計面試指南](https://www
 | Chapter                                                        | Speaker            | Date  | Completed |
 | -------------------------------------------------------------- | ------------------ | ----- | --------- |
 | CHAPTER 1: SCALE FROM ZERO TO MILLIONS OF USERS                | Jay / Fienna Liang | 06/09 | ✅        |
-| CHAPTER 2: BACK-OF-THE-ENVELOPE ESTIMATION                     |                    |       | ✔️         |
-| CHAPTER 3: A FRAMEWORK FOR SYSTEM DESIGN INTERVIEWS            |                    |       | ✔️         |
+| CHAPTER 2: BACK-OF-THE-ENVELOPE ESTIMATION                     |                    |       | ✔️        |
+| CHAPTER 3: A FRAMEWORK FOR SYSTEM DESIGN INTERVIEWS            |                    |       | ✔️        |
 | CHAPTER 4: DESIGN A RATE LIMITER                               | 杯 / 雷 N          | 06/16 | ✅        |
-| CHAPTER 5: DESIGN CONSISTENT HASHING                           | 雷 N               | 06/30 | ✔️         |
-| CHAPTER 6: DESIGN A KEY-VALUE STORE                            | 雷 N               | 07/07 | ✔️         |
-| CHAPTER 7: DESIGN A UNIQUE ID GENERATOR IN DISTRIBUTED SYSTEMS | Jordan             | 06/30 | ✔️         |
-| CHAPTER 8: DESIGN A URL SHORTENER                              | Jordan             | 06/30 | ✔️         |
-| CHAPTER 9: DESIGN A WEB CRAWLER                                | Jordan             | 07/07 | ✔️         |
-| CHAPTER 10: DESIGN A NOTIFICATION SYSTEM                       | 雷 N               | ??/?? | ✔️         |
-| CHAPTER 11: DESIGN A NEWS FEED SYSTEM                          |                    |       | ✔️         |
-| CHAPTER 12: DESIGN A CHAT SYSTEM                               |                    |       | ✔️         |
-| CHAPTER 13: DESIGN A SEARCH AUTOCOMPLETE SYSTEM                |                    |       | ✔️         |
-| CHAPTER 14: DESIGN YOUTUBE                                     | Jordan             | ??/?? | ✔️         |
-| CHAPTER 15: DESIGN GOOGLE DRIVE                                |                    |       | ✔️         |
-| CHAPTER 16: THE LEARNING CONTINUES                             |                    |       | ✔️         |
+| CHAPTER 5: DESIGN CONSISTENT HASHING                           | 雷 N               | 06/30 | ✔️        |
+| CHAPTER 6: DESIGN A KEY-VALUE STORE                            | 雷 N               | 07/07 | ✔️        |
+| CHAPTER 7: DESIGN A UNIQUE ID GENERATOR IN DISTRIBUTED SYSTEMS | Jordan             | 07/07 | ✔️        |
+| CHAPTER 8: DESIGN A URL SHORTENER                              | Jordan             | 07/07 | ✔️        |
+| CHAPTER 9: DESIGN A WEB CRAWLER                                | Jordan             | 07/14 | ✔️        |
+| CHAPTER 10: DESIGN A NOTIFICATION SYSTEM                       | 雷 N               | ??/?? | ✔️        |
+| CHAPTER 11: DESIGN A NEWS FEED SYSTEM                          |                    |       | ✔️        |
+| CHAPTER 12: DESIGN A CHAT SYSTEM                               |                    |       | ✔️        |
+| CHAPTER 13: DESIGN A SEARCH AUTOCOMPLETE SYSTEM                |                    |       | ✔️        |
+| CHAPTER 14: DESIGN YOUTUBE                                     | Jordan             | ??/?? | ✔️        |
+| CHAPTER 15: DESIGN GOOGLE DRIVE                                |                    |       | ✔️        |
+| CHAPTER 16: THE LEARNING CONTINUES                             |                    |       | ✔️        |
 
 > Note: Use [Markdown table generator](https://www.tablesgenerator.com/markdown_tables) to load, modify and format the table
 
