@@ -57,6 +57,26 @@ UUID 是一個能產生 128-bit ID 的演算法，有著極小的碰撞概率，
 
 ![](assets/uuid.png)
 
+註：uuid 演算法
+
+---
+
+分成 v1 ～ v5，根據 uuid.js 統計有 77% 使用者選擇 v4；21% 使用者選擇 v1，有特殊需求才會選 v5 & v3，v2 基本上不採用 ([ref1](https://yuanchieh.page/posts/2020/2020-12-01-uuid-%E5%8E%9F%E7%90%86%E8%88%87%E5%AF%A6%E4%BD%9C%E5%88%86%E6%9E%90-%E8%A9%B2%E5%A6%82%E4%BD%95%E6%8C%91%E9%81%B8%E9%81%A9%E5%90%88%E7%9A%84-uuid-%E7%89%88%E6%9C%AC/))，使用時機可大略分為 ([ref2](https://stackoverflow.com/questions/20342058/which-uuid-version-to-use)、[ref3](https://www.uuidtools.com/uuid-versions-explained))：
+
+_只是單純需要一個隨機不重複的 uuid_：v4，會從超過 5.3 x 10^36 種可能的 uuid 裡面隨機生成出一個，分為兩個變化版，variant-1 為 Minecraft 中使用的演算法；variant-2 即 Microsoft 系統內的 GUID [ref3]
+
+_需要在前者的基礎上知道時間資訊（精度到 micro seconds）和是哪台機器產生的_：v1，格式見下圖，前三組為時間資訊，表示從 1582-10-15 00:00:00 到現在經過了多少個 100 ns ([ref4](https://stackoverflow.com/questions/3795554/extract-the-time-from-a-uuid-v1-in-python))，low time 代表算出的間隔的最後 32-bits；mid time 為中間 16-bits；第三項為版本資訊 + 開頭 16-bits；第四項為 variant 編號 + system clock 值；第五項為網卡的 mac address
+
+![](assets/uuid_v1.png)
+
+要 decode 出時間的話，可參考該 python code ([ref5](https://stackoverflow.com/questions/17571100/how-to-extract-timestamp-from-uuid-v1-timeuuid-using-javascript)):
+
+![](assets/uuid_v1_decode.png)
+
+_需要能根據 input 產生 reproducible 的 uuid_：用 v3 或 v5，v3 將 input 用 MD5 hash；v5 用 SHA-1 hash，所以 v5 較 v3 安全
+
+---
+
 優點：
 
 1. 簡單，不用考慮伺服器間的同步問題
