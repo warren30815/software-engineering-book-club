@@ -11,12 +11,10 @@
 
 | Date  | Speaker | Topic               |
 | ----- | ------- | ------------------- |
-| 07/07 | 雷 N    | [System Design] CH6 |
 | 07/07 | Jordan  | [System Design] CH7 |
-| 07/07 | Jordan  | [System Design] CH8 |
-| 07/14 | Jordan  | [System Design] CH9 |
+| 07/14 | 雷 N    | [System Design] CH6 |
 | 07/21 | 竹子    | [Micro Frontend]    |
-| 07/28 | -       | -                   |
+| 07/28 | Jordan  | [System Design] CH8 |
 
 ## Book list
 
