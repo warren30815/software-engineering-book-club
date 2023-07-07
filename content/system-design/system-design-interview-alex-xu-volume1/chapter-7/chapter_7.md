@@ -20,7 +20,7 @@ A: 需全為數字
 
 Q: ID 的長度有限制嗎
 
-A: 需為 64-bit
+A: 需為 64 bits
 
 Q: 系統的規模有多大
 
@@ -50,9 +50,9 @@ A: 每秒需要能產生 10,000 IDs
 
 ### UUID（Universally Unique Identifier）
 
-UUID 是一個能產生 128-bit ID 的演算法，有著極小的碰撞概率，每秒產生 10 億個 UUID 的情況下持續 100 年，只有 50% 的機率會碰撞
+UUID 是一個能產生 128 bits ID 的演算法，有著極小的碰撞概率，每秒產生 10 億個 UUID 的情況下持續 100 年，只有 50% 的機率會碰撞
 
-一個 UUID 的範例：_09c93e62-50b4-468d-bf8a-c07e1040bfb2_
+一個 UUID 的範例：_09c93e62-50b4-468d-bf8a-c07e1040bfb2_，32 個 16 進位的字元，所以為 128 bits (32 \* 4)
 
 因為有著極低的碰撞概率，因此可以每個伺服器都跑自己的 UUID 生成器，如下圖：
 
@@ -66,7 +66,7 @@ UUID 是一個能產生 128-bit ID 的演算法，有著極小的碰撞概率，
 
 _只是單純需要一個隨機不重複的 uuid_：v4，會從超過 5.3 x 10^36 種可能的 uuid 裡面隨機生成出一個，分為兩個變化版，variant-1 為 Minecraft 中使用的演算法；variant-2 即 Microsoft 系統內的 GUID [ref3]
 
-_需要在前者的基礎上知道時間資訊（精度到 micro seconds）和是哪台機器產生的_：v1，格式見下圖，前三組為時間資訊，表示從 1582-10-15 00:00:00 到現在經過了多少個 100 ns ([ref4](https://stackoverflow.com/questions/3795554/extract-the-time-from-a-uuid-v1-in-python))，low time 代表算出的間隔的最後 32-bits；mid time 為中間 16-bits；第三項為版本資訊 + 開頭 16-bits；第四項為 variant 編號 + system clock 值；第五項為網卡的 mac address
+_需要在前者的基礎上知道時間資訊（精度到 100 nanoseconds）和是哪台機器產生的_：v1，格式見下圖，前三組為時間資訊，表示從 1582-10-15 00:00:00 到現在經過了多少個 100 ns ([ref4](https://stackoverflow.com/questions/3795554/extract-the-time-from-a-uuid-v1-in-python))，low time 代表算出的間隔的最後 32 bits；mid time 為中間 16 bits；第三項為版本資訊 + 開頭 16 bits；第四項為 variant 編號 + system clock 值；第五項為網卡的 mac address
 
 ![](assets/uuid_v1.png)
 
@@ -91,7 +91,7 @@ Recap ([ref6](https://stackoverflow.com/questions/10867405/generating-v5-uuid-wh
 
 缺點：
 
-1. 128-bit 太長，浪費空間且不符合一開始的需求（64-bit）
+1. 128 bits 太長，浪費空間且不符合一開始的需求（64 bits）
 2. ID 不隨著時間嚴格遞增
 3. ID 內有非數字的值，不符合一開始的需求（需全為數字）
 
@@ -115,7 +115,7 @@ Recap ([ref6](https://stackoverflow.com/questions/10867405/generating-v5-uuid-wh
 
 ![](assets/snowflake.png)
 
-將 64-bit 分成幾個區塊，有點像是網路封包 header 的做法
+將 64 bits 分成幾個區塊，有點像是網路封包 header 的做法
 
 - 符號 bit：1 bit，二進位中 0 代表正，1 代表負
 
