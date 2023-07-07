@@ -46,8 +46,9 @@ A: 每秒需要能產生 10,000 IDs
 1. 多個資料中心下很難擴充
 2. ID 的值不一定隨著時間嚴格遞增，比如有一台產生較多，一台產生較少，那後者產生出的 ID 數值即使生成時間較晚，但 ID 數值仍會小於前者生成較早的 ID
 3. 很難 auto-scale 伺服器
+4. 離線時無法使用
 
-### UUID
+### UUID（Universally Unique Identifier）
 
 UUID 是一個能產生 128-bit ID 的演算法，有著極小的碰撞概率，每秒產生 10 億個 UUID 的情況下持續 100 年，只有 50% 的機率會碰撞
 
@@ -73,18 +74,24 @@ _需要在前者的基礎上知道時間資訊（精度到 micro seconds）和�
 
 ![](assets/uuid_v1_decode.png)
 
-_需要能根據 input 產生 reproducible 的 uuid_：用 v3 或 v5，v3 將 input 用 MD5 hash；v5 用 SHA-1 hash，所以 v5 較 v3 安全
+_需要能根據 namespace + input 產生 reproducible 的 uuid_：用 v3 或 v5，v3 將 input 用 MD5 hash；v5 用 SHA-1 hash，所以 v5 較 v3 安全
+
+namespace 可以視為你的 key 的概念，範例可見 [ref6](https://stackoverflow.com/questions/10867405/generating-v5-uuid-what-is-name-and-namespace)
+
+Recap ([ref6](https://stackoverflow.com/questions/10867405/generating-v5-uuid-what-is-name-and-namespace))
+
+![](assets/uuid_recap.png)
 
 ---
 
 優點：
 
-1. 簡單，不用考慮伺服器間的同步問題
+1. 簡單，不用考慮伺服器間的同步問題，且離線時也能使用
 2. 承上，高擴展性
 
 缺點：
 
-1. 128-bit 太長，不符合一開始的需求（64-bit）
+1. 128-bit 太長，浪費空間且不符合一開始的需求（64-bit）
 2. ID 不隨著時間嚴格遞增
 3. ID 內有非數字的值，不符合一開始的需求（需全為數字）
 
@@ -102,6 +109,7 @@ _需要能根據 input 產生 reproducible 的 uuid_：用 v3 或 v5，v3 將 in
 缺點：
 
 1. Single point of failure
+2. 離線時無法使用
 
 ### Twitter snowflake approach
 
@@ -146,7 +154,20 @@ _需要能根據 input 產生 reproducible 的 uuid_：用 v3 或 v5，v3 將 in
 - High availability：ID 生成器很重要，設計上需考慮好如何保證高 availability
 
 ## 補充資料
-[xid](https://github.com/rs/xid)
+
+一個簡單生成可排序的分散式 global uuid 演算法 [xid](https://github.com/rs/xid)
+
+一個 xid 的範例：_9m4e2mr0ui3e8a215n4g_，可以看到比 UUID 簡潔多了（雖然時間精度只到秒）
+
+其是基於 Mongo Object ID algorithm 生成的字串，Mongo Object ID 基本上格式如下：
+
+```
+0|1|2|3     4|5|6    7|8|      9|10|11
+
+Timestamp  machine   PID   Increment counter
+```
+
+再經由 base32hex (base32 的 variant 版本) 來去把它編碼成更短的字串（24 vs 20 hexadecimal digits）([ref](https://github.com/rs/xid/blob/master/README.md))
 
 ![](assets/xid.png)
 
