@@ -38,13 +38,13 @@ A: 可假設不會被刪除或更新
 
 - 每秒寫入量：100 million / 24 / 3600 = 1160
 
-- 讀取量：假設讀寫比為 10 : 1，每秒讀取量為 1160 * 10 = 11,600
+- 讀取量：假設讀寫比為 10 : 1，每秒讀取量為 1160 \* 10 = 11,600
 
-- 假設此服務會運作 10 年，總網址量為 100 million * 365 * 10 = 365 billion
+- 假設此服務會運作 10 年，總網址量為 100 million \* 365 \* 10 = 365 billion
 
 - 假設平均一個網址長度為 100 bytes
 
-- 10 年的規格上限為 365 billion * 100 bytes * 10 years = 365 TB
+- 10 年的規格上限為 365 billion \* 100 bytes \* 10 years = 365 TB
 
 ## 步驟二：high-level 架構
 
@@ -62,6 +62,7 @@ POST api/v1/data/shorten
 ```
 
 假設縮短後的網址格式如：
+
 ```
 www.tinyurl.com/{hashValue}
 ```
@@ -110,7 +111,7 @@ GET api/v1/shortUrl
 
 用知名的 hash 演算法，如 CRC32、MD5、SHA-1...，缺點為 hash 出來的字串太長，以及還需要向資料庫確認是否有碰撞，會降低效能，一個提高檢查效率的改進方式為應用 Bloom filter（見下方備註），雖有可能產生 false positive，但在此應用情境下可容忍
 
-註：Bloom filter介紹
+註：Bloom filter 介紹
 
 (from wiki) Bloom filter is a space-efficient probabilistic data structure, that is used to test whether an element is a member of a set.
 
