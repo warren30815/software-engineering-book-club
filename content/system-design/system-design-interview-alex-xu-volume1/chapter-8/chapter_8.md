@@ -123,7 +123,7 @@ _註：Bloom filter 介紹_
 
 方法 2 在資料量很大時會很耗費記憶體空間
 
-方法 3 可能會有 hash function collision 問題
+方法 3 可能會有 hash collision 問題
 
 由上可知方法 1, 2 不適用資料量大時的情境，我們可以改良方法 3，既然一個 hash function 可能會有 collision，那我們就多加幾個 hash function 產生多個 unsigned int index，若一資料全部對應的 bit array index 的值不都為 1，則他一定不存在（definitely no）；若都為 1，因為有可能是其他資料貢獻的，所以可能存在（probably yes），此即為 bloom filter 的核心概念
 
@@ -140,6 +140,8 @@ Bloom filter 說沒有該資料的話**一定**沒有，說有該資料的話**�
 使用案例（_允許些微出錯的可能性，不一定要 100% 準確_）
 
 1. Database
+
+利用 Bloom Filter 來初篩該資料是否存在於某個 Partition
 
 ![](assets/bf_case1.png)
 
@@ -165,7 +167,7 @@ bloom filter 設計上要考慮的問題有：如何決定 bit array 大小（bi
 
 ---
 
-上方著重在依照現有數據建立好一 bit array 後進行高效、可容許些微錯誤的查詢，但該設計方法是無法刪除資料的，因為可能會動到其他數據的結果，因此一個改良的方法是 bit array 的每一個值變成 counter（如下圖），當今天要刪除某數據時，直接把對應的 index 們 counter -= 1，這樣如果某 index 的值被扣到 0，那代表有被映射到該 index 的數據一定不存在，這種改良法稱為 Counting Bloom Filter
+上方著重在依照現有數據建立好一 bit array 後進行高效、可容許些微錯誤的查詢，但該設計方法無法刪除資料，因為可能會動到其他數據的結果，因此一個改良的方法是 bit array 的每一個值變成 counter（如下圖），當今天要刪除某數據時，直接把對應的 index 們 counter -= 1，這樣如果某 index 的值被扣到 0，那代表有被映射到該 index 的數據一定不存在，這種改良法稱為 Counting Bloom Filter
 
 缺點是儲存空間需求增加，原本 bit array 每一位只需要 1 bit，現在換成 counter，假設用 int 的話是 4 bytes，儲存空間需求直接 \* 32
 
