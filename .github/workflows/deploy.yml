@@ -15,10 +15,10 @@ jobs:
       - name: Setup | Node
         uses: actions/setup-node@v2
         with:
-          node-version: "16"
+          node-version: '16'
 
       - name: Install latest npm
-        run: npm i -g npm
+        run: npm i -g npm@latest
       - name: Cache node modules
         uses: actions/cache@v2
         env:
