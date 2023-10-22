@@ -8,16 +8,16 @@ Chinese Translation: [內行人才知道的系統設計面試指南](https://www
 | CHAPTER 2: BACK-OF-THE-ENVELOPE ESTIMATION                     |                    | ✔️        |
 | CHAPTER 3: A FRAMEWORK FOR SYSTEM DESIGN INTERVIEWS            |                    | ✔️        |
 | CHAPTER 4: DESIGN A RATE LIMITER                               | 杯 / 雷 N          | ✅        |
-| CHAPTER 5: DESIGN CONSISTENT HASHING                           | 雷 N               | ✔️        |
-| CHAPTER 6: DESIGN A KEY-VALUE STORE                            | 雷 N               | ✔️        |
-| CHAPTER 7: DESIGN A UNIQUE ID GENERATOR IN DISTRIBUTED SYSTEMS | Jordan             | ✔️        |
-| CHAPTER 8: DESIGN A URL SHORTENER                              | Jordan             | ✔️        |
-| CHAPTER 9: DESIGN A WEB CRAWLER                                | Jordan             | ✔️        |
+| CHAPTER 5: DESIGN CONSISTENT HASHING                           | 雷 N               | ✅        |
+| CHAPTER 6: DESIGN A KEY-VALUE STORE                            | 雷 N               | ✅        |
+| CHAPTER 7: DESIGN A UNIQUE ID GENERATOR IN DISTRIBUTED SYSTEMS | Jordan             | ✅        |
+| CHAPTER 8: DESIGN A URL SHORTENER                              | Jordan             | ✅        |
+| CHAPTER 9: DESIGN A WEB CRAWLER                                |                    | ✔️        |
 | CHAPTER 10: DESIGN A NOTIFICATION SYSTEM                       | Danny              | ✅        |
 | CHAPTER 11: DESIGN A NEWS FEED SYSTEM                          |                    | ✔️        |
 | CHAPTER 12: DESIGN A CHAT SYSTEM                               |                    | ✔️        |
 | CHAPTER 13: DESIGN A SEARCH AUTOCOMPLETE SYSTEM                |                    | ✔️        |
-| CHAPTER 14: DESIGN YOUTUBE                                     | Jordan             | ✔️        |
+| CHAPTER 14: DESIGN YOUTUBE                                     |                    | ✔️        |
 | CHAPTER 15: DESIGN GOOGLE DRIVE                                |                    | ✔️        |
 | CHAPTER 16: THE LEARNING CONTINUES                             |                    | ✔️        |
 
