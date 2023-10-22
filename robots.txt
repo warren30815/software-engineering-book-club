@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://warren30815.github.io//sitemap/sitemap-index.xml
+Host: https://warren30815.github.io
